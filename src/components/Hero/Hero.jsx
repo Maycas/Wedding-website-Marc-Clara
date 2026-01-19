@@ -25,15 +25,14 @@ const Hero = () => {
   // Text Opacity: 0 to 1 as we scroll from 0 to 300
   const opacity = isDesktop ? Math.min(Math.max(offset / 300, 0), 1) : 1;
   
-  // Trigger hearts when text becomes fully visible
+  // Trigger hearts immediately on scroll
   React.useEffect(() => {
-    if (opacity >= 0.8 && !showHearts) {
+    if (offset > 10 && !showHearts) {
       setShowHearts(true);
-    } else if (opacity < 0.1) {
-       // Optional: Reset so it can trigger again if they scroll up and down
+    } else if (offset <= 10) {
        setShowHearts(false);
     }
-  }, [opacity, showHearts]);
+  }, [offset, showHearts]);
 
   // Overlay Opacity: 0 to 0.6 as we scroll from 0 to 400
   // Starts clear (0) so we see faces. Darkens as text arrives.

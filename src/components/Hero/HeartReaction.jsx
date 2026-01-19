@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import './Hero.css'; // Reusing Hero.css for simplicity as they are tightly coupled
+import HeartIcon from './HeartIcon';
+import './Hero.css';
 
 const HeartReaction = ({ visible }) => {
   const [hearts, setHearts] = useState([]);
 
   useEffect(() => {
-    if (visible) {
-      // Create a batch of hearts when triggered
-      const newHearts = Array.from({ length: 10 }).map((_, i) => ({
+    if (visible && hearts.length === 0) {
+      // Create a batch of ~100 hearts
+      const newHearts = Array.from({ length: 100 }).map((_, i) => ({
         id: Date.now() + i,
-        left: i % 2 === 0, // Alternate sides
-        delay: Math.random() * 2, // Random starting time
-        offset: Math.random() * 50, // Random horizontal offset
+        left: i % 2 === 0, // Split sides
+        delay: Math.random() * 3, // Spread over 3 seconds
+        duration: 3 + Math.random() * 2, // 3-5s float duration
+        offset: Math.random() * 40, // Horizontal spread 0-40% from side
+        size: 30 + Math.random() * 40, // 30px to 70px
       }));
-      setHearts(prev => [...prev, ...newHearts]);
+      setHearts(newHearts);
       
-      // Cleanup hearts after animation (approx 4s)
+      // Cleanup
       const timer = setTimeout(() => {
         setHearts([]);
-      }, 4000);
+      }, 6000); 
       
       return () => clearTimeout(timer);
     }
@@ -34,10 +37,13 @@ const HeartReaction = ({ visible }) => {
           className={`floating-heart ${heart.left ? 'left' : 'right'}`}
           style={{
             animationDelay: `${heart.delay}s`,
-            [heart.left ? 'left' : 'right']: `${10 + (heart.offset / 10)}%`, // 10-15% from side
+            animationDuration: `${heart.duration}s`,
+            [heart.left ? 'left' : 'right']: `${5 + (heart.offset / 2)}%`,
+            width: `${heart.size}px`,
+            height: `${heart.size}px`,
           }}
         >
-          ❤️
+          <HeartIcon size={heart.size} color="#FFD700" />
         </div>
       ))}
     </div>
