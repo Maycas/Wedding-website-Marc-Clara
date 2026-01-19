@@ -35,10 +35,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sans);
-  /* Changed from Serif to Sans */
-  font-weight: 700;
-  /* Bolder for headings */
+  font-family: var(--font-serif);
+  font-weight: 400;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
   line-height: 1.3;
