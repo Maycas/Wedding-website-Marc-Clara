@@ -74,6 +74,12 @@
   .hero {
     background-position: center;
   }
+
+  .hero-intro-text {
+    font-size: 1.25rem;
+    padding-top: 60px;
+    /* Move down to uncover faces */
+  }
 }
 
 .scroll-arrow {
