@@ -68,7 +68,7 @@ const Hero = () => {
           transition: 'transform 0.1s ease-out, opacity 0.1s ease-out'
         }}
       >
-        <p className="uppercase text-gold">Finalment, després de 8 anys junts...</p>
+        <p className="uppercase text-gold hero-intro-text">Finalment, després de 8 anys junts...</p>
         <h1>Ens casem!</h1>
         <p className="names">Clara & Marc</p>
       </div>
