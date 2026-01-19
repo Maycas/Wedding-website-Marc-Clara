@@ -125,10 +125,12 @@
 
 .floating-heart {
   position: absolute;
-  font-size: 2rem;
   opacity: 0;
   bottom: 0;
-  animation: floatUp 3s ease-out forwards;
+  /* Use 'forwards' to keep them gone, but the React state wipes them anyway */
+  animation-name: floatUp;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes floatUp {
@@ -137,12 +139,13 @@
     opacity: 0;
   }
 
-  10% {
+  5% {
     opacity: 1;
   }
 
   100% {
-    transform: translateY(-80vh) scale(1.5);
+    transform: translateY(-90vh) scale(1.2);
+    /* Go higher */
     opacity: 0;
   }
 }

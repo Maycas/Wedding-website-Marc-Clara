@@ -26,10 +26,14 @@ const Hero = () => {
   const opacity = isDesktop ? Math.min(Math.max(offset / 300, 0), 1) : 1;
   
   // Trigger hearts immediately on scroll
+  // Trigger hearts immediately on scroll
   React.useEffect(() => {
+    // Show when scrolled > 10px
     if (offset > 10 && !showHearts) {
       setShowHearts(true);
-    } else if (offset <= 10) {
+    } 
+    // STRICTLY reset when back at top (<= 10px) to allow re-trigger
+    else if (offset <= 10 && showHearts) {
        setShowHearts(false);
     }
   }, [offset, showHearts]);

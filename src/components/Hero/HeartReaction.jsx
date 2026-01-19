@@ -6,7 +6,7 @@ const HeartReaction = ({ visible }) => {
   const [hearts, setHearts] = useState([]);
 
   useEffect(() => {
-    if (visible && hearts.length === 0) {
+    if (visible) {
       // Create a batch of ~100 hearts
       const newHearts = Array.from({ length: 100 }).map((_, i) => ({
         id: Date.now() + i,
@@ -18,12 +18,15 @@ const HeartReaction = ({ visible }) => {
       }));
       setHearts(newHearts);
       
-      // Cleanup
+      // Cleanup after animation finishes
       const timer = setTimeout(() => {
         setHearts([]);
       }, 6000); 
       
       return () => clearTimeout(timer);
+    } else {
+      // Reset immediately when not visible so it can trigger again
+      setHearts([]);
     }
   }, [visible]);
 
@@ -43,7 +46,7 @@ const HeartReaction = ({ visible }) => {
             height: `${heart.size}px`,
           }}
         >
-          <HeartIcon size={heart.size} color="#FFD700" />
+          <HeartIcon size={heart.size} color="#c5a059" />
         </div>
       ))}
     </div>
