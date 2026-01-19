@@ -1,0 +1,7 @@
+footer {
+  padding: 40px 0;
+  background-color: var(--color-dark);
+  color: var(--color-gold);
+  font-family: var(--font-serif);
+  letter-spacing: 1px;
+}

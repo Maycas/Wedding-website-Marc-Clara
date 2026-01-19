@@ -1,0 +1,56 @@
+.details-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 60px 0;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.detail-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.detail-line {
+  width: 1px;
+  height: 100px;
+  background-color: var(--color-gold);
+  opacity: 0.3;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .detail-line {
+    display: block;
+  }
+}
+
+.detail-text {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.detail-subtext {
+  font-size: 1rem;
+  color: #777;
+}
+
+.map-container {
+  margin-top: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotel-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-gold);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hotel-link:hover {
+  color: var(--color-gold);
+  border-color: transparent;
+}

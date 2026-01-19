@@ -1,0 +1,134 @@
+.timeline-section {
+  background-color: var(--color-cream);
+  padding: 80px 0;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+/* Horizontal Line */
+.timeline-line {
+  position: absolute;
+  top: 40px;
+  /* Adjust based on where you want the line to cross */
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background-color: var(--color-dark);
+  z-index: 1;
+  display: none;
+  /* Hidden on mobile */
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    display: block;
+  }
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .timeline-items {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-cream);
+  /* To hide line behind icon if needed, or just let it pass through */
+  /* If we want the line to stop at the icon, we need padding/bg. 
+     But design usually has line going through. 
+     The screenshot shows line clearly crossing, with ticks.
+  */
+}
+
+.timeline-time {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  /* Space for the tick mark */
+  position: relative;
+}
+
+/* Tick mark */
+@media (min-width: 768px) {
+  .timeline-time::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    /* Height of the tick */
+    background-color: var(--color-dark);
+  }
+}
+
+.timeline-icon-wrapper {
+  color: var(--color-gold);
+  background-color: var(--color-cream);
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.timeline-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+@media (max-width: 767px) {
+  .timeline-item {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .timeline-time {
+    margin-bottom: 0;
+    width: 60px;
+    text-align: right;
+  }
+
+  .timeline-time::after {
+    display: none;
+  }
+
+  .timeline-icon-wrapper {
+    margin-bottom: 0;
+  }
+}

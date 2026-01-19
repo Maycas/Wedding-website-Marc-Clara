@@ -1,0 +1,32 @@
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.rsvp-cta-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-rsvp {
+  display: inline-block;
+  background-color: var(--color-gold);
+  color: white;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-rsvp:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+  background-color: #c49f33;
+  /* Darker gold */
+}
