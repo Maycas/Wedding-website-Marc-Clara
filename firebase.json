@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "web-casament-clara-i-marc",
+    "site": "casament-clara-i-marc",
     "public": "dist",
     "ignore": [
       "firebase.json",
@@ -11,6 +11,26 @@
       {
         "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|css|js)",
+        "headers": [
+          {
+             "key": "Cache-Control",
+             "value": "max-age=31536000"
+          }
+        ]
       }
     ]
   }
