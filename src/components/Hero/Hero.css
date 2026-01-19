@@ -41,6 +41,8 @@
 }
 
 .hero h1 {
+  font-family: var(--font-sans);
+  /* Update to match navbar */
   font-size: 5rem;
   margin: 20px 0;
   color: white;
@@ -106,5 +108,41 @@
 
   60% {
     transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Heart Reaction Styles */
+.heart-reaction-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0;
+  bottom: 0;
+  animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%) scale(0.5);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-80vh) scale(1.5);
+    opacity: 0;
   }
 }

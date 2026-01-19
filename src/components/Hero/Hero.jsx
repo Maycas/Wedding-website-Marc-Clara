@@ -1,10 +1,12 @@
 import React from 'react';
 import heroImage from '../../assets/hero_final.jpg';
+import HeartReaction from './HeartReaction';
 import './Hero.css';
 
 const Hero = () => {
   const [offset, setOffset] = React.useState(0);
   const [isDesktop, setIsDesktop] = React.useState(window.innerWidth > 768);
+  const [showHearts, setShowHearts] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => setOffset(window.scrollY);
@@ -23,6 +25,16 @@ const Hero = () => {
   // Text Opacity: 0 to 1 as we scroll from 0 to 300
   const opacity = isDesktop ? Math.min(Math.max(offset / 300, 0), 1) : 1;
   
+  // Trigger hearts when text becomes fully visible
+  React.useEffect(() => {
+    if (opacity >= 0.8 && !showHearts) {
+      setShowHearts(true);
+    } else if (opacity < 0.1) {
+       // Optional: Reset so it can trigger again if they scroll up and down
+       setShowHearts(false);
+    }
+  }, [opacity, showHearts]);
+
   // Overlay Opacity: 0 to 0.6 as we scroll from 0 to 400
   // Starts clear (0) so we see faces. Darkens as text arrives.
   const overlayOpacity = isDesktop ? Math.min(Math.max(offset / 400, 0), 0.6) : 0.4; // Mobile keeps static overlay
@@ -57,6 +69,8 @@ const Hero = () => {
         <h1>Ens casem!</h1>
         <p className="names">Clara & Marc</p>
       </div>
+
+      <HeartReaction visible={showHearts} />
 
       {/* Scroll Arrow */}
       <div 
