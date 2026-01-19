@@ -80,7 +80,8 @@
 }
 
 .scroll-text {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  /* Match navbar font */
   font-size: 0.9rem;
   letter-spacing: 2px;
   margin: 0;
