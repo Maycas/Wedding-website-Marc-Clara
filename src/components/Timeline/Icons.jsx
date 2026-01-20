@@ -123,8 +123,9 @@ export const IconParty = () => (
     {/* Raised Arm (Left) */}
     <path d="M35 40 Q 25 35, 25 20 C 25 15, 30 15, 30 20" />
     
-    {/* Music Note */}
-    <path d="M70 20 V10 H80 V15" strokeWidth="3" />
-    <circle cx="70" cy="20" r="2" fill="currentColor" stroke="none" />
+    {/* Floating Musical Note (Beamed) */}
+    <path d="M65 30 V10 H80 V25" strokeWidth="3" />
+    <ellipse cx="62" cy="32" rx="4" ry="3" fill="currentColor" stroke="none" />
+    <ellipse cx="77" cy="27" rx="4" ry="3" fill="currentColor" stroke="none" />
   </SvgIcon>
 );
