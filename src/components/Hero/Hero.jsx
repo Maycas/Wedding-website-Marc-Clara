@@ -80,7 +80,7 @@ const Hero = () => {
         className="scroll-arrow"
         style={{ opacity: arrowOpacity }}
       >
-        <p className="scroll-text">Llisca avall</p>
+        <p className="scroll-text">Llisca</p>
         <svg 
           width="40" 
           height="40" 
