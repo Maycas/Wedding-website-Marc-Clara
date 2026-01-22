@@ -88,7 +88,8 @@
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
-  pointer-events: none;
+  z-index: 20;
+  /* Ensure it's clickable and above overlay */
   transition: opacity 0.3s ease-out;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
   display: flex;

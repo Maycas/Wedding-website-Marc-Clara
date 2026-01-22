@@ -78,7 +78,13 @@ const Hero = () => {
       {/* Scroll Arrow */}
       <div 
         className="scroll-arrow"
-        style={{ opacity: arrowOpacity }}
+        style={{ opacity: arrowOpacity, cursor: 'pointer' }}
+        onClick={() => {
+          const detailsSection = document.getElementById('details');
+          if (detailsSection) {
+            detailsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
       >
         <p className="scroll-text">Llisca</p>
         <svg 
