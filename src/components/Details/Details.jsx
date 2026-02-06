@@ -3,6 +3,8 @@ import './Details.css';
 import Carousel from './Carousel';
 
 const Details = () => {
+  // Removed calendar logic as it moved to RSVP
+
   return (
     <section id="details">
       <div className="container text-center">
@@ -39,6 +41,8 @@ const Details = () => {
             <p className="detail-subtext">Av. Port d'Aiguadolç, 8, Sitges</p>
           </div>
         </div>
+
+
 
         {/* Hotel Carousel */}
         <Carousel />

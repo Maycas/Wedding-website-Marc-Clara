@@ -30,3 +30,48 @@
   background-color: #c49f33;
   /* Darker gold */
 }
+
+.calendar-link-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  /* Transparent background */
+  color: var(--color-gold);
+  /* Gold text */
+  border: 1px solid var(--color-gold);
+  /* Gold border */
+  padding: 12px 25px;
+  /* Smaller padding */
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: 400;
+  /* Normal weight */
+  font-size: 0.9rem;
+  /* Smaller font */
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: none;
+  /* No shadow */
+  transition: all 0.3s ease;
+}
+
+.btn-calendar-link svg {
+  width: 20px;
+  /* Smaller icon */
+  height: 20px;
+}
+
+.btn-calendar-link:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-gold);
+  color: white;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
