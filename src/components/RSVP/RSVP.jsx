@@ -20,7 +20,7 @@ const RSVP = () => {
   };
 
   return (
-    <section id="rsvp" style={{ backgroundColor: 'var(--color-white)' }}>
+    <section id="rsvp" style={{ backgroundColor: 'var(--color-cream)' }}>
       <div className="container text-center">
         <p className="uppercase text-gold">Confirmació</p>
         <h2>Us hi esperem!</h2>

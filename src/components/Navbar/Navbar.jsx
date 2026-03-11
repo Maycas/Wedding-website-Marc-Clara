@@ -38,6 +38,7 @@ const Navbar = () => {
           <li><a href="#hero" onClick={closeMenu}>Inici</a></li>
           <li><a href="#details" onClick={closeMenu}>Detalls</a></li>
           <li><a href="#timeline" onClick={closeMenu}>Horari</a></li>
+          <li><a href="#gifts" onClick={closeMenu}>Llista de Noces</a></li>
           <li><a href="#rsvp" onClick={closeMenu}>Confirmació</a></li>
         </ul>
       </div>
