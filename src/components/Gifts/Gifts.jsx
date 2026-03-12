@@ -57,7 +57,7 @@ const Gifts = () => {
         <h2>El Nostre Viatge</h2>
         
         <div className="gifts-icon">
-          <img src={gokuFriezaJapanImg} alt="Goku i Freezer Xoc d'Energia al Japó" className="epic-clash-img" />
+          <img src={gokuFriezaJapanImg} alt="Goku i Freezer Xoc d'Energia al Japó" className="epic-clash-img" loading="lazy" />
         </div>
         
         <p className="gifts-message">
@@ -86,7 +86,7 @@ const Gifts = () => {
             
           <div className="japan-bottom-row">
             {shuffledChibis.map((chibi, index) => (
-              <img key={index} src={chibi.src} alt={chibi.alt} className="japan-chibi-icon" />
+              <img key={index} src={chibi.src} alt={chibi.alt} className="japan-chibi-icon" loading="lazy" />
             ))}
           </div>
         </div>

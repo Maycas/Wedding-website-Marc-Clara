@@ -26,7 +26,7 @@ const Carousel = () => {
       >
         {images.map((img, index) => (
           <div key={index} className="carousel-card">
-            <img src={img} alt={`Hotel Estela view ${index + 1}`} />
+            <img src={img} alt={`Hotel Estela view ${index + 1}`} loading="lazy" />
           </div>
         ))}
       </div>

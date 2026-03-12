@@ -6,7 +6,7 @@ const Timeline = () => {
   const events = [
     { time: '17:30', title: 'Benvinguda', icon: <IconWelcome /> },
     { time: '18:00', title: 'Cerimònia', icon: <IconCeremony /> },
-    { time: '19:00', title: 'Cocktail', icon: <IconCocktail /> },
+    { time: '19:00', title: 'Aperitiu', icon: <IconCocktail /> },
     { time: '20:00', title: 'Sopar', icon: <IconDinner /> },
     { time: '23:00', title: 'Festa', icon: <IconParty /> },
   ];
