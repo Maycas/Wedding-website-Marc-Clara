@@ -36,8 +36,9 @@
   align-items: center;
   justify-content: center;
   gap: 30px; /* Increased padding */
-  margin-top: 40px;
-  flex-wrap: wrap; /* Allows wrapping on very small screens */
+  margin-top: 10px; /* Adjusted as it's now outside bank-details */
+  flex-wrap: wrap; /* Allows wrapping */
+  max-width: 600px; /* Restricts width so 9 items wrap into exactly 2 rows (5 on top, 4 on bottom) */
 }
 
 .japan-chibi-icon {
